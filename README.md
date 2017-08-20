@@ -18,7 +18,7 @@
 
 - <b>GlobalDateTime 1.0</b> Closed source. Do not look for it.
 
-# PEOPLE BEHIND OPENSIMMPLS
+# PEOPLE BEHIND GLOBALDATETIME
 
 ## Author:
     
