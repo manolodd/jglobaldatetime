@@ -1,6 +1,6 @@
 # PROJECT STATUS (Compiled using Java 1.8)
 
-- Master branch 
+- Master branch: [![Build Status](https://travis-ci.org/manolodd/globaldatetime.svg?branch=master)](https://travis-ci.org/manolodd/globaldatetime)
 
 - Development branch 
 
@@ -38,7 +38,7 @@ Thanks folks!
 
 GlobalDateTime is opensource software. I encourage you to modify it as much as possible; but I would like you to send this modifications back and, hence, became an GlobalDateTime contributor. In this way, all the people will benefit from them as you are doing downloading and using GlobalDateTime now.
 
-If you want to contribute to OpenSimMPLS project, follow these instructions:
+If you want to contribute to GlobalDateTime project, follow these instructions:
 
  - Log in to your GitHub account.
  - Look for GlobalDateTime project.
@@ -50,9 +50,9 @@ If you want to contribute to OpenSimMPLS project, follow these instructions:
  - Go again to yout GitHub account, choose your GlobalDateTime repository and then your "globaldatetime-festureyouaredeveloping" branch (since the previous step, this branch should be there) and click on the green button at the left. This will guide you to make a pull request (send your modifications on your own GlobalDateTime repository to GlobalDateTime main repository from where you did your fork at the beginning). Choose the development branch of GlobalDateTime as base branch to merge.
  - That's all; I will have your contribution and I will try to merge it into the development branch of GlobalDateTime. Please, comment your contribution as much as possible; I have to be able to understand your contribution.
 
-This is a very easy process. However, if it is very difficult to you, simply send me all your modifications (scenario, sources, documentation...) to:
+This is a very easy process. However, if it is very difficult to you, simply send me all your modifications (sources, documentation...) to:
 
-ingeniero@manolodominguez.com
+globaldatetime@manolodominguez.com
 
 And I will do my best to understand them and, somewhat, include your contribution into the project.
 
