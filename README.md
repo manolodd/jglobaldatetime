@@ -22,7 +22,7 @@
 
 ## Author:
     
- - Manuel Domínguez-Dorado - <ingeniero@ManoloDominguez.com>
+ - Manuel Domínguez-Dorado - <globaldatetime@ManoloDominguez.com>
    
 # THIRD-PARTY COMPONENTS
 
