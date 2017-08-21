@@ -1,6 +1,6 @@
 # PROJECT STATUS (Compiled using Java 1.8)
 
-- Master branch 
+- Master branch: [![Build Status](https://travis-ci.org/manolodd/globaldatetime.svg?branch=master)](https://travis-ci.org/manolodd/globaldatetime)
 
 - Development branch 
 
