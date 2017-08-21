@@ -19,7 +19,7 @@ package com.manolodominguez.globaldatetime;
  * This class implements an exception to be used when an abnormal situation
  * happens during the use of GlobalDateTime class.
  *
- * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+ * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
  * @version 1.0
  */
 public class GlobalDateTimeException extends Exception {
@@ -30,7 +30,7 @@ public class GlobalDateTimeException extends Exception {
      *
      * @param message The message associated to the exception.
      * @param reasonCode The reason code associated to the exception.
-     * @author Manuel Domínguez-Dorado manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado ingeniero@manolodominguez.com
      * @since 1.0
      */
     public GlobalDateTimeException(String message, int reasonCode) {
@@ -43,7 +43,7 @@ public class GlobalDateTimeException extends Exception {
      *
      * @return The reason code associated to the extension. Should be one of the
      * constants defined in GlobalDateTimeException class.
-     * @author Manuel Domínguez-Dorado manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado ingeniero@manolodominguez.com
      * @since 1.0
      */
     public int getReasonCode() {

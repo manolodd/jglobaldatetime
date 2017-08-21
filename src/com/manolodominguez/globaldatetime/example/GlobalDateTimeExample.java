@@ -25,7 +25,7 @@ import java.util.logging.Logger;
 /**
  * This class implements an example of use of GlobalDateTime.
  *
- * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+ * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
  * @version 1.0
  */
 public class GlobalDateTimeExample {

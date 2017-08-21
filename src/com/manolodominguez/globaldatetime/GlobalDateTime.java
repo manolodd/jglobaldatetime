@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
  * This class implements functionalities to handle DateTime object taking into
  * account the international context and the corresponding time zones.
  *
- * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+ * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
  * @version 1.0
  */
 public class GlobalDateTime {
@@ -40,7 +40,7 @@ public class GlobalDateTime {
      * system zone ID. After that, it uses the default ZoneID and precission to
      * normalize the datetime.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @throws GlobalDateTimeException if the default zone ID is not a valid
      * Zone ID.
      * @since 1.0
@@ -62,7 +62,7 @@ public class GlobalDateTime {
      * ZonedDateTime format ), that includes its own Zone ID. After that, it
      * uses the default ZoneID and precission to normalize the datetime.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param originalZonedDateTime The original ZonedDateTime that needs to be
      * normalized.
      * @throws GlobalDateTimeException if the default zone ID is not a valid
@@ -86,7 +86,7 @@ public class GlobalDateTime {
      * GlobalDateTime format), that includes its own Zone ID. After that, it
      * uses the default ZoneID and precission to normalize the datetime.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param originalZonedDateTime The original GlobaleDateTime that needs to
      * be normalized.
      * @throws GlobalDateTimeException if the default zone ID is not a valid
@@ -115,7 +115,7 @@ public class GlobalDateTime {
      * 2017-04-06T21:20:18.811+02:00[Europe/Madrid]
      * 2015-04-06T21:20:18.811+02:00[Europe/Madrid]
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param originalZonedDateTime The String representing the original
      * ZonedDateTime that needs to be normalized.
      * @throws GlobalDateTimeException if the default zone ID is not a valid
@@ -143,7 +143,7 @@ public class GlobalDateTime {
      * that, it uses the default ZoneID and precission to normalize the
      * datetime.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param originalDateTimeMillis The original instant, as number of
      * millisecond since Epoch withouth Zone ID, that needs to be normalized.
      * @throws GlobalDateTimeException if the default zone ID is not a valid
@@ -167,7 +167,7 @@ public class GlobalDateTime {
      * Timestamp format) and the default Zone ID. After that, it uses the
      * default ZoneID and precission to normalize the datetime.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param originalDateTime The original instant, as a Timestamp withouth
      * Zone ID, that needs to be normalized.
      * @throws GlobalDateTimeException if the default zone ID is not a valid
@@ -188,7 +188,7 @@ public class GlobalDateTime {
     /**
      * This methods gets the normalized date and time, in ZonedDateTime format.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @return the normalized date and time.
      * @since 1.0
      */
@@ -200,7 +200,7 @@ public class GlobalDateTime {
      * This methods gets the not-normalized date and time used to create this
      * GlobalDateTime, in ZonedDateTime format.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @return the not-normalized date and time used to create this
      * GlobalDateTime
      * @since 1.0
@@ -213,7 +213,7 @@ public class GlobalDateTime {
      * This methods set the GlobalDateTime to its initial values, removing any
      * "minus" or "plus" operation that could be happened.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @since 1.0
      */
     public void resetToOriginal() {
@@ -228,7 +228,7 @@ public class GlobalDateTime {
      * 2017-04-06T21:20:18.811+02:00[Europe/Madrid]
      * 2015-04-06T21:20:18.811+02:00[Europe/Madrid]
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @return originalDateTime the normalized date and time, in Java String
      * format.
      * @since 1.0
@@ -241,7 +241,7 @@ public class GlobalDateTime {
      * This methods gets the instant represented by this GlobalDateTime, as a
      * the number of millisecond since Epoch.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @return the instant represented by this GlobalDateTime, as a the number
      * of millisecond since Epoch.
      * @since 1.0
@@ -253,7 +253,7 @@ public class GlobalDateTime {
     /**
      * This methods gets a clone of this GlobalDateTime object.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @return a clone of this GlobalDateTime object.
      * @since 1.0
      */
@@ -272,7 +272,7 @@ public class GlobalDateTime {
      *
      * For instance "2015-02-16 18:01:12.022034"
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @return a String representation of this ZonedDateTime to be used as input
      * for MySQL DATETIME fields.
      * @since 1.0
@@ -292,7 +292,7 @@ public class GlobalDateTime {
      * This methods increases this GlobalDateTime in a given number of units
      * (hours, days, minutes...).
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param amount The number of units the GlobalDateTime will be increased.
      * @param unit The type of units the GlobalDateTime will be increased
      * (Months, hours, secods...)
@@ -306,7 +306,7 @@ public class GlobalDateTime {
      * This methods decreases this GlobalDateTime in a given number of units
      * (hours, days, minutes...).
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param amount The number of units the GlobalDateTime will be decreased.
      * @param unit The type of units the GlobalDateTime will be decreased
      * (Months, hours, secods...)
@@ -320,7 +320,7 @@ public class GlobalDateTime {
      * This methods checks if this GlobalDateTime is over (if current date is
      * greater).
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @return true, if this GlobalDateTime is over. Otherwise, false.
      * @since 1.0
      */
@@ -333,7 +333,7 @@ public class GlobalDateTime {
      * This methods checks if this GlobalDateTime is over since a given amount
      * of time.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param amount The period within which we want to check if the date is
      * over.
      * @param unit The period unit (days, months, hours...)
@@ -350,7 +350,7 @@ public class GlobalDateTime {
      * This methods checks if this GlobalDateTime is coming in a given amount of
      * time.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param amount The period within which we want to check if the is coming.
      * @param unit The period unit (days, months, hours...)
      * @return true, if this GlobalDateTime is coming in a specified amount of
@@ -366,7 +366,7 @@ public class GlobalDateTime {
      * This methods checks if this GlobalDateTime is equal to another instant
      * represented in milliseconds from Epoch.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param anotherDateTimeMillis an instant represented in milliseconds from
      * Epoch.
      * @return true, if the instant of this GlobalDateTime is the same than the
@@ -381,7 +381,7 @@ public class GlobalDateTime {
      * This methods checks if this GlobalDateTime is equal to another instant
      * represented a a Timestamp.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param anotherDateTime an instant represented as a Timestamp.
      * @return true, if the instant of this GlobalDateTime is the same than the
      * instant specified as a parameter. Oterwise, false.
@@ -395,7 +395,7 @@ public class GlobalDateTime {
      * This methods checks if this GlobalDateTime is equal to another date time
      * represented a ZonedDateTime.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param anotherZonedDateTime a datetime represented as a ZonedDateTime.
      * @return true, if the instant of this GlobalDateTime is the same than the
      * datetime specified as a parameter. Otherwise, false.
@@ -410,7 +410,7 @@ public class GlobalDateTime {
      * This methods checks if this GlobalDateTime is equal to another date time
      * represented as another GlobalDateTime.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param anotherZonedDateTime a datetime represented as a GlobalDateTime.
      * @return true, if the instant of this GlobalDateTime is equal than the
      * datetime specified as a parameter. Otherwise, false.
@@ -429,7 +429,7 @@ public class GlobalDateTime {
      * 2017-04-06T21:20:18.811+02:00[Europe/Madrid]
      * 2015-04-06T21:20:18.811+02:00[Europe/Madrid]
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param anotherZonedDateTime a datetime represented as a Java datetime
      * String.
      * @return true, if the instant of this GlobalDateTime is equal than the
@@ -451,7 +451,7 @@ public class GlobalDateTime {
      * This methods checks if this GlobalDateTime is before another instant
      * represented in milliseconds from Epoch.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param anotherDateTimeMillis an instant represented in milliseconds from
      * Epoch.
      * @return true, if the instant of this GlobalDateTime is before than the
@@ -466,7 +466,7 @@ public class GlobalDateTime {
      * This methods checks if this GlobalDateTime is before another instant
      * represented a a Timestamp.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param anotherDateTime an instant represented as a Timestamp.
      * @return true, if the instant of this GlobalDateTime is before than the
      * instant specified as a parameter. Oterwise, false.
@@ -480,7 +480,7 @@ public class GlobalDateTime {
      * This methods checks if this GlobalDateTime is before another date time
      * represented a ZonedDateTime.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param anotherZonedDateTime a datetime represented as a ZonedDateTime.
      * @return true, if the instant of this GlobalDateTime is before than the
      * datetime specified as a parameter. Otherwise, false.
@@ -495,7 +495,7 @@ public class GlobalDateTime {
      * This methods checks if this GlobalDateTime is before another date time
      * represented as another GlobalDateTime.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param anotherZonedDateTime a datetime represented as a GlobalDateTime.
      * @return true, if the instant of this GlobalDateTime is before than the
      * datetime specified as a parameter. Otherwise, false.
@@ -514,7 +514,7 @@ public class GlobalDateTime {
      * 2017-04-06T21:20:18.811+02:00[Europe/Madrid]
      * 2015-04-06T21:20:18.811+02:00[Europe/Madrid]
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param anotherZonedDateTime a datetime represented as a Java datetime
      * String.
      * @return true, if the instant of this GlobalDateTime before than the
@@ -536,7 +536,7 @@ public class GlobalDateTime {
      * This methods checks if this GlobalDateTime is after another instant
      * represented in milliseconds from Epoch.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param anotherDateTimeMillis an instant represented in milliseconds from
      * Epoch.
      * @return true, if the instant of this GlobalDateTime is after than the
@@ -551,7 +551,7 @@ public class GlobalDateTime {
      * This methods checks if this GlobalDateTime is after another instant
      * represented a a Timestamp.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param anotherDateTime an instant represented as a Timestamp.
      * @return true, if the instant of this GlobalDateTime is after than the
      * instant specified as a parameter. Oterwise, false.
@@ -565,7 +565,7 @@ public class GlobalDateTime {
      * This methods checks if this GlobalDateTime is after another date time
      * represented a ZonedDateTime.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param anotherZonedDateTime a datetime represented as a ZonedDateTime.
      * @return true, if the instant of this GlobalDateTime is after than the
      * datetime specified as a parameter. Otherwise, false.
@@ -580,7 +580,7 @@ public class GlobalDateTime {
      * This methods checks if this GlobalDateTime is equal to another date time
      * represented as another GlobalDateTime.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param anotherZonedDateTime a datetime represented as a GlobalDateTime.
      * @return true, if the instant of this GlobalDateTime is after than the
      * datetime specified as a parameter. Otherwise, false.
@@ -599,7 +599,7 @@ public class GlobalDateTime {
      * 2017-04-06T21:20:18.811+02:00[Europe/Madrid]
      * 2015-04-06T21:20:18.811+02:00[Europe/Madrid]
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param anotherZonedDateTime a datetime represented as a Java datetime
      * String.
      * @return true, if the instant of this GlobalDateTime is after than the
@@ -621,7 +621,7 @@ public class GlobalDateTime {
      * This methods changes the default Zone for this GlobalDateTime so that the
      * same instant is represented as a date and time for the selected new Zone.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param zoneId The new default Zone for this GlobalDateTime, as a string.
      * @throws GlobalDateTimeException if the specified Zone is not valid one.
      * @since 1.0
@@ -641,7 +641,7 @@ public class GlobalDateTime {
      * This methods changes the default Zone for this GlobalDateTime so that the
      * same instant is represented as a date and time for the selected new Zone.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param zoneId The new default Zone for this GlobalDateTime.
      * @since 1.0
      */
@@ -656,7 +656,7 @@ public class GlobalDateTime {
      * This methods changes the default precission for this GlobalDateTime. Its
      * value will be truncated to the specified precission.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param precission The desired precission (seconds, minutes,
      * millisecond...)
      * @since 1.0
@@ -672,7 +672,7 @@ public class GlobalDateTime {
      * that the same instant is represented as a date and time for the default
      * new Zone. The new default Zone will be set to GlobalDateTime.DEFAULT_ZONE
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @since 1.0
      */
     public void resetToDefaultZone() {
@@ -688,7 +688,7 @@ public class GlobalDateTime {
      * value will be truncated to the new default precission. The new default
      * precission will be set to GlobalDateTime.DEFAULT_PRECISSION.
      *
-     * @author Manuel Domínguez-Dorado - manuel.dominguez@enzinatec.com
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @since 1.0
      */
     public void resetToDefaultPrecission() {
