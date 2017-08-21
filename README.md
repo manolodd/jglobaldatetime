@@ -34,6 +34,32 @@ GlobalDateTime uses third-party components each one of them having its own OSS l
 
 Thanks folks!
 
+# COMPILING FROM SOURCES
+
+You can download latest compiled stable releases from the releases section of this repository. However, if you want to test new features (please, do it and give feedback), you will need to compile the project from sources. Follow these steps:
+
+ - Clone the GlobalDateTime repo: 
+```console
+git clone https://github.com/manolodd/globaldatetime.git
+```
+ - Compile the code and obtain a binary jar including all you need (you will need to install Ant before):
+```console
+cd globaldatetime
+ant globaldatetime-binary-fat-release
+```
+ - The jar file will be located in binary-fat-release/globaldatetime directory.
+```console
+cd binary-fat-release/globaldatetime
+```
+ - Copy the library jar file and use it in your project.
+```console
+cp GlobalDateTime-bin-v{YourVersion}.jar /wherever/you/want
+```
+ - It is not necessary but if you want to see GlobalDateTime in action, the library contains a Main class. You can run it!
+```console
+java -jar openSimMPLS-bin-v{YourVersion}.jar
+```
+
 
 # HOW TO CONTRIBUTE
 
