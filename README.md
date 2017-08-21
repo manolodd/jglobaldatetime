@@ -22,7 +22,7 @@
 
 ## Author:
     
- - Manuel Domínguez-Dorado - <globaldatetime@ManoloDominguez.com>
+ - Manuel Domínguez-Dorado - <ingeniero@ManoloDominguez.com>
    
 # THIRD-PARTY COMPONENTS
 
@@ -52,7 +52,7 @@ If you want to contribute to OpenSimMPLS project, follow these instructions:
 
 This is a very easy process. However, if it is very difficult to you, simply send me all your modifications (scenario, sources, documentation...) to:
 
-ingeniero@manolodominguez.com
+globaldatetime@manolodominguez.com
 
 And I will do my best to understand them and, somewhat, include your contribution into the project.
 
