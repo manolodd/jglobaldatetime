@@ -57,7 +57,7 @@ cp GlobalDateTime-bin-v{YourVersion}.jar /wherever/you/want
 ```
  - It is not necessary but if you want to see GlobalDateTime in action, the library contains a Main class. You can run it!
 ```console
-java -jar openSimMPLS-bin-v{YourVersion}.jar
+java -jar GlobalDateTime-bin-v{YourVersion}.jar
 ```
 
 
