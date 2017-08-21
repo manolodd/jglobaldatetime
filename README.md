@@ -2,7 +2,7 @@
 
 - Master branch: [![Build Status](https://travis-ci.org/manolodd/globaldatetime.svg?branch=master)](https://travis-ci.org/manolodd/globaldatetime)
 
-- Development branch 
+- Development branch: [![Build Status](https://travis-ci.org/manolodd/globaldatetime.svg?branch=development)](https://travis-ci.org/manolodd/globaldatetime)
 
 # THE PROJECT
 
