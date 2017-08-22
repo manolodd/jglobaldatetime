@@ -19,8 +19,9 @@ import com.manolodominguez.globaldatetime.GlobalDateTime;
 import com.manolodominguez.globaldatetime.GlobalDateTimeException;
 import java.sql.Timestamp;
 import java.time.temporal.ChronoUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  * This class implements an example of use of GlobalDateTime.
@@ -167,9 +168,12 @@ public class GlobalDateTimeExample {
             System.out.println();
 
         } catch (GlobalDateTimeException ex) {
-            Logger.getLogger(GlobalDateTimeExample.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("An error creating a GlobalDateTime has happened: ", ex);
+            //Logger.getLogger(GlobalDateTimeExample.class.getName()).log(Level.SEVERE, null, ex);
         }
     
     }
 
+    private static final Logger logger = LoggerFactory.getLogger(GlobalDateTimeExample.class);
+    
 }
