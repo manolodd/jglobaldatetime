@@ -6,7 +6,7 @@
 
 # THE PROJECT
 
-<b>GlobalDateTime</b> is a library that eases the comparation, transmission and storage of zoned datetime formats in Java. It 
+<b>GlobalDateTime</b> is a library that eases the comparation, transmission, conversion and storage of zoned datetime formats in Java.
 
 # LICENSE
 
