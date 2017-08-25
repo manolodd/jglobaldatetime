@@ -8,6 +8,8 @@
 
 <b>GlobalDateTime</b> is a Java library that eases the comparation, transmission, conversion and storage of zoned datetime formats.
 
+![GlobalDateTime logo](https://raw.githubusercontent.com/manolodd/globaldatetime/master/logo/globaldatetime-logo.jpg)
+
 # LICENSE
 
 ## Current version:
