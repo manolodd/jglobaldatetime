@@ -62,6 +62,10 @@ cp GlobalDateTime-bin-v{YourVersion}.jar /wherever/you/want
 java -jar GlobalDateTime-bin-v{YourVersion}.jar
 ```
 
+# I NEED AN EXAMPLE
+
+Don't worry. You will find one in the sourcecode tree [here](https://github.com/manolodd/globaldatetime/blob/master/src/com/manolodominguez/globaldatetime/example/GlobalDateTimeExample.java). 
+
 
 # HOW TO CONTRIBUTE
 
