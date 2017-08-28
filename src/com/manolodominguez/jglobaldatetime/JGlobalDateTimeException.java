@@ -13,27 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.manolodominguez.globaldatetime;
+package com.manolodominguez.jglobaldatetime;
 
 /**
  * This class implements an exception to be used when an abnormal situation
- * happens during the use of GlobalDateTime class.
+ * happens during the use of JGlobalDateTime class.
  *
  * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
  * @version 1.0
  */
-public class GlobalDateTimeException extends Exception {
+public class JGlobalDateTimeException extends Exception {
 
     /**
      * This is the constructor of the class. It creates a new instance of
-     * GlobalDateTimeException.
+     * JGlobalDateTimeException.
      *
      * @param message The message associated to the exception.
      * @param reasonCode The reason code associated to the exception.
      * @author Manuel Domínguez-Dorado ingeniero@manolodominguez.com
      * @since 1.0
      */
-    public GlobalDateTimeException(String message, int reasonCode) {
+    public JGlobalDateTimeException(String message, int reasonCode) {
         super(message);
         this.reasonCode = reasonCode;
     }
@@ -42,7 +42,7 @@ public class GlobalDateTimeException extends Exception {
      * This method gets the reason code associated to the exception.
      *
      * @return The reason code associated to the extension. Should be one of the
-     * constants defined in GlobalDateTimeException class.
+     * constants defined in JGlobalDateTimeException class.
      * @author Manuel Domínguez-Dorado ingeniero@manolodominguez.com
      * @since 1.0
      */

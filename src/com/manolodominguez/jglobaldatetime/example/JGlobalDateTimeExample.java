@@ -13,28 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.manolodominguez.globaldatetime.example;
+package com.manolodominguez.jglobaldatetime.example;
 
-import com.manolodominguez.globaldatetime.GlobalDateTime;
-import com.manolodominguez.globaldatetime.GlobalDateTimeException;
+import com.manolodominguez.jglobaldatetime.JGlobalDateTime;
+import com.manolodominguez.jglobaldatetime.JGlobalDateTimeException;
 import java.sql.Timestamp;
 import java.time.temporal.ChronoUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * This class implements an example of use of GlobalDateTime.
+ * This class implements an example of use of JGlobalDateTime.
  *
  * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
  * @version 1.0
  */
-public class GlobalDateTimeExample {
+public class JGlobalDateTimeExample {
 
     /**
-     * This methods is the constructor of the class. It creates a new instance
-     * of GlobalDateTime using as input the local date and time and the default
-     * system zone ID. After that, it uses the default ZoneID and precission to
-     * normalize the datetime.
+     * This methods starts a JGlobalDateTime set of examples. It creates several
+     * instances of JGlobalDateTime and perform some comparations, conversions
+     * and so on to test the capabilities of this library.
      *
      * @param args parameter passed out as arguments to the main class. They are
      * not used.
@@ -42,10 +41,10 @@ public class GlobalDateTimeExample {
      */
     public static void main(String[] args) {
 
-        GlobalDateTime gdt1;
-        GlobalDateTime gdt2;
-        GlobalDateTime gdt3;
-        GlobalDateTime gdt4;
+        JGlobalDateTime gdt1;
+        JGlobalDateTime gdt2;
+        JGlobalDateTime gdt3;
+        JGlobalDateTime gdt4;
         Timestamp ts;
 
         try {
@@ -53,18 +52,18 @@ public class GlobalDateTimeExample {
             //
             // gdt1 will represent the current datetime of the system using the 
             // system default ZoneID.
-            gdt1 = new GlobalDateTime();
+            gdt1 = new JGlobalDateTime();
             // gdt2 will be a datetime that has arrived to the system via 
             // Internet in a JSON message, from Chicago. It comes in 
             // ZonedDateTime String format.
-            gdt2 = new GlobalDateTime("2017-08-20T14:20:18.811-05:00[America/Chicago]");
+            gdt2 = new JGlobalDateTime("2017-08-20T14:20:18.811-05:00[America/Chicago]");
             // gdt3 will be a datetime that has been loaded from a local log 
             // file. It is in millis from Epoch format.
-            gdt3 = new GlobalDateTime(1428348018845L);
+            gdt3 = new JGlobalDateTime(1428348018845L);
             // gdt4 is a datetime that has been retrieved via JDBC from a 
             // database in Timestamp format.
             ts = new Timestamp(1428348018845L);
-            gdt4 = new GlobalDateTime(ts);
+            gdt4 = new JGlobalDateTime(ts);
 
             // Let's go
             // Printing all datetimes. They are normalized to the same reference
@@ -139,12 +138,12 @@ public class GlobalDateTimeExample {
             System.out.println("gdt4: " + gdt4.toNormalizedMySQLDateTime());
             System.out.println();
 
-            // Now we modify our GlobalDateTimes a bit.
+            // Now we modify our JGlobalDateTimes a bit.
             gdt1.increase(3, ChronoUnit.DAYS);
             gdt2.increase(4, ChronoUnit.MINUTES);
             gdt3.decrease(1, ChronoUnit.YEARS);
             gdt4.decrease(1, ChronoUnit.MONTHS);
-            System.out.println("Let's change our GlobalDateTimes a bit");
+            System.out.println("Let's change our JGlobalDateTimes a bit");
             System.out.println("gdt1 + 3 days: " + gdt1.toNormalizedMySQLDateTime());
             System.out.println("gdt2 + 4 minutes: " + gdt2.toNormalizedMySQLDateTime());
             System.out.println("gdt3 - 1 year: " + gdt3.toNormalizedMySQLDateTime());
@@ -167,12 +166,12 @@ public class GlobalDateTimeExample {
 
             System.out.println();
 
-        } catch (GlobalDateTimeException ex) {
-            logger.error("An error creating a GlobalDateTime has happened: ", ex);
+        } catch (JGlobalDateTimeException ex) {
+            logger.error("An error creating a JGlobalDateTime has happened: ", ex);
         }
 
     }
 
-    private static final Logger logger = LoggerFactory.getLogger(GlobalDateTimeExample.class);
+    private static final Logger logger = LoggerFactory.getLogger(JGlobalDateTimeExample.class);
 
 }
