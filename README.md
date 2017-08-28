@@ -1,14 +1,14 @@
 # PROJECT STATUS (Compiled using Java 1.8)
 
-- Master branch [![Build Status](https://travis-ci.org/manolodd/globaldatetime.svg?branch=master)](https://travis-ci.org/manolodd/globaldatetime)
+- Master branch [![Build Status](https://travis-ci.org/manolodd/jglobaldatetime.svg?branch=master)](https://travis-ci.org/manolodd/jglobaldatetime)
 
-- Development branch [![Build Status](https://travis-ci.org/manolodd/globaldatetime.svg?branch=development)](https://travis-ci.org/manolodd/globaldatetime?branch=development)
+- Development branch [![Build Status](https://travis-ci.org/manolodd/jglobaldatetime.svg?branch=development)](https://travis-ci.org/manolodd/jglobaldatetime?branch=development)
 
 # THE PROJECT
 
 <b>GlobalDateTime</b> is a Java library that eases the comparation, transmission, conversion and storage of zoned datetime formats.
 
-![GlobalDateTime logo](https://raw.githubusercontent.com/manolodd/globaldatetime/master/logo/globaldatetime-logo.jpg)
+![GlobalDateTime logo](https://raw.githubusercontent.com/manolodd/globaldatetime/master/logo/jglobaldatetime-logo.jpg)
 
 # LICENSE
 
