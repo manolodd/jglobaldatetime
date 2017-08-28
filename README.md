@@ -8,7 +8,7 @@
 
 <b>JGlobalDateTime</b> is a Java library that eases the comparation, transmission, conversion and storage of zoned datetime formats.
 
-![JGlobalDateTime logo](https://raw.githubusercontent.com/manolodd/globaldatetime/master/logo/jglobaldatetime-logo.jpg)
+![JGlobalDateTime logo](https://raw.githubusercontent.com/manolodd/jglobaldatetime/master/logo/jglobaldatetime-logo.jpg)
 
 # LICENSE
 
