@@ -85,7 +85,7 @@ If you want to contribute to JGlobalDateTime project, follow these instructions:
 
 This is a very easy process. However, if it is very difficult to you, simply send me all your modifications (sources, documentation...) to:
 
-globaldatetime@manolodominguez.com
+jglobaldatetime@manolodominguez.com
 
 And I will do my best to understand them and, somewhat, include your contribution into the project.
 
