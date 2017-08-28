@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="globaldatetime" default="default" basedir=".">
-    <description>Builds, tests, and runs the project globaldatetime.</description>
+<project name=" jglobaldatetime" default="default" basedir=".">
+    <description>Builds, tests, and runs the project  jglobaldatetime.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 
@@ -58,7 +58,7 @@
 
     An example of overriding the target for project execution could look like this:
 
-        <target name="run" depends="globaldatetime-impl.jar">
+        <target name="run" depends=" jglobaldatetime-impl.jar">
             <exec dir="bin" executable="launcher.exe">
                 <arg file="${dist.jar}"/>
             </exec>
@@ -71,20 +71,20 @@
 
     -->
     
-    <target name="globaldatetime-release" depends="globaldatetime-binary-fat-release"> </target>
+    <target name=" jglobaldatetime-release" depends=" jglobaldatetime-binary-fat-release"> </target>
     
-    <target name="globaldatetime-binary-fat-release" depends="jar">
+    <target name=" jglobaldatetime-binary-fat-release" depends="jar">
 
         <!-- Change the value of this property to be the name of your JAR,
              minus the .jar extension. It should not have spaces.
              <property name="store.jar.name" value="MyJarName"/>
         -->
-        <property name="store.bin.jar.name" value="GlobalDateTime-bin-v2.0"/>
+        <property name="store.bin.jar.name" value="JGlobalDateTime-bin-v2.0"/>
 
 
         <!-- don't edit below this line -->
 
-        <property name="store.bin.dir" value="binary-fat-release/globaldatetime"/>
+        <property name="store.bin.dir" value="binary-fat-release/ jglobaldatetime"/>
         <property name="store.bin.jar" value="${store.bin.dir}/${store.bin.jar.name}.jar"/>
 
         <echo message="Packaging ${application.title} into a single JAR at ${store.bin.jar}"/>

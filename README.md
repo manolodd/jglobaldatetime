@@ -6,21 +6,21 @@
 
 # THE PROJECT
 
-<b>GlobalDateTime</b> is a Java library that eases the comparation, transmission, conversion and storage of zoned datetime formats.
+<b>JGlobalDateTime</b> is a Java library that eases the comparation, transmission, conversion and storage of zoned datetime formats.
 
-![GlobalDateTime logo](https://raw.githubusercontent.com/manolodd/globaldatetime/master/logo/jglobaldatetime-logo.jpg)
+![JGlobalDateTime logo](https://raw.githubusercontent.com/manolodd/globaldatetime/master/logo/jglobaldatetime-logo.jpg)
 
 # LICENSE
 
 ## Current version:
  
-- <b>GlobalDateTime 2.0:</b> Apache Software License 2.0.
+- <b>JGlobalDateTime 2.0:</b> Apache Software License 2.0.
 
 ## Previous versions:
 
-- <b>GlobalDateTime <2.0:</b> Closed source. Do not look for them.
+- <b>JGlobalDateTime <2.0:</b> Closed source. Do not look for them.
 
-# PEOPLE BEHIND GLOBALDATETIME
+# PEOPLE BEHIND JGLOBALDATETIME
 
 ## Author:
     
@@ -29,7 +29,7 @@
 
 # THIRD-PARTY COMPONENTS
 
-GlobalDateTime uses third-party components each one of them having its own OSS license. License compatibility has been taken into account to allow GlobalDateTime be released under its current OSS licence. They are:
+JGlobalDateTime uses third-party components each one of them having its own OSS license. License compatibility has been taken into account to allow JGlobalDateTime be released under its current OSS licence. They are:
 
 - slf4j-api - MIT - https://www.slf4j.org/
 - slf4j-simple - MIT - https://www.slf4j.org/
@@ -40,48 +40,48 @@ Thanks folks!
 
 You can download latest compiled stable releases from the releases section of this repository. However, if you want to test new features (please, do it and give feedback), you will need to compile the project from sources. Follow these steps:
 
- - Clone the GlobalDateTime repo: 
+ - Clone the JGlobalDateTime repo: 
 ```console
-git clone https://github.com/manolodd/globaldatetime.git
+git clone https://github.com/manolodd/jglobaldatetime.git
 ```
  - Compile the code and obtain a binary jar including all you need (you will need to install Ant before):
 ```console
-cd globaldatetime
-ant globaldatetime-binary-fat-release
+cd jglobaldatetime
+ant jglobaldatetime-binary-fat-release
 ```
- - The jar file will be located in binary-fat-release/globaldatetime directory.
+ - The jar file will be located in binary-fat-release/jglobaldatetime directory.
 ```console
-cd binary-fat-release/globaldatetime
+cd binary-fat-release/jglobaldatetime
 ```
  - Copy the library jar file and use it in your project.
 ```console
-cp GlobalDateTime-bin-v{YourVersion}.jar /wherever/you/want
+cp JGlobalDateTime-bin-v{YourVersion}.jar /wherever/you/want
 ```
- - It is not necessary but if you want to see GlobalDateTime in action, the library contains a Main class. You can run it!
+ - It is not necessary but if you want to see JGlobalDateTime in action, the library contains a Main class. You can run it!
 ```console
-java -jar GlobalDateTime-bin-v{YourVersion}.jar
+java -jar JGlobalDateTime-bin-v{YourVersion}.jar
 ```
 
 # I NEED AN EXAMPLE
 
-Don't worry. You will find one in the sourcecode tree [here](https://github.com/manolodd/globaldatetime/blob/master/src/com/manolodominguez/globaldatetime/example/GlobalDateTimeExample.java). 
+Don't worry. You will find one in the sourcecode tree [here](https://github.com/manolodd/jglobaldatetime/blob/master/src/com/manolodominguez/jglobaldatetime/example/JGlobalDateTimeExample.java). 
 
 
 # HOW TO CONTRIBUTE
 
-GlobalDateTime is opensource software. I encourage you to modify it as much as possible; but I would like you to send this modifications back and, hence, became an GlobalDateTime contributor. In this way, all the people will benefit from them as you are doing downloading and using GlobalDateTime now.
+JGlobalDateTime is opensource software. I encourage you to modify it as much as possible; but I would like you to send this modifications back and, hence, became an JGlobalDateTime contributor. In this way, all the people will benefit from them as you are doing downloading and using JGlobalDateTime now.
 
-If you want to contribute to GlobalDateTime project, follow these instructions:
+If you want to contribute to JGlobalDateTime project, follow these instructions:
 
  - Log in to your GitHub account.
- - Look for GlobalDateTime project.
- - Create a fork of GlobalDateTime (Development branch) in your own GitHub repository.
- - Clone your GlobalDateTime repository to your PC or laptop.
- - Create a branch in your local cloned GIT repository. I recommend to name this branch as "globaldatetime-festureyouaredeveloping" or something similar.
+ - Look for JGlobalDateTime project.
+ - Create a fork of JGlobalDateTime (Development branch) in your own GitHub repository.
+ - Clone your JGlobalDateTime repository to your PC or laptop.
+ - Create a branch in your local cloned GIT repository. I recommend to name this branch as "jglobaldatetime-festureyouaredeveloping" or something similar.
  - Do all modifications on this branch, file additions or deletions, modifications, commits...
- - Push your modifications to your remote github GlobalDateTime repository.
- - Go again to yout GitHub account, choose your GlobalDateTime repository and then your "globaldatetime-festureyouaredeveloping" branch (since the previous step, this branch should be there) and click on the green button at the left. This will guide you to make a pull request (send your modifications from your own GlobalDateTime repository to GlobalDateTime main repository from where you did your fork at the beginning). Choose the development branch of GlobalDateTime as base branch to merge.
- - That's all; I will have your contribution and I will try to merge it into the development branch of GlobalDateTime. Please, comment your contribution as much as possible; I have to be able to understand your contribution.
+ - Push your modifications to your remote github JGlobalDateTime repository.
+ - Go again to yout GitHub account, choose your JGlobalDateTime repository and then your "jglobaldatetime-festureyouaredeveloping" branch (since the previous step, this branch should be there) and click on the green button at the left. This will guide you to make a pull request (send your modifications from your own JGlobalDateTime repository to JGlobalDateTime main repository from where you did your fork at the beginning). Choose the development branch of JGlobalDateTime as base branch to merge.
+ - That's all; I will have your contribution and I will try to merge it into the development branch of JGlobalDateTime. Please, comment your contribution as much as possible; I have to be able to understand your contribution.
 
 This is a very easy process. However, if it is very difficult to you, simply send me all your modifications (sources, documentation...) to:
 
