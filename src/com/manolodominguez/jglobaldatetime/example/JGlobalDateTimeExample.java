@@ -76,10 +76,10 @@ public class JGlobalDateTimeExample {
 
             // Now printing all datetimes. They are normalized to the same 
             // reference ZoneID (Europe/Madrid by default).
-            gdt1.changeDefaultZone("Europe/Lisbon");
-            gdt2.changeDefaultZone("Europe/Lisbon");
-            gdt3.changeDefaultZone("Europe/Lisbon");
-            gdt4.changeDefaultZone("Europe/Lisbon");
+            gdt1.changeZoneID("Europe/Lisbon");
+            gdt2.changeZoneID("Europe/Lisbon");
+            gdt3.changeZoneID("Europe/Lisbon");
+            gdt4.changeZoneID("Europe/Lisbon");
             System.out.println("The same but in Europe/Lisbon are:");
             System.out.println("gdt1: " + gdt1.toNormalizedDateTimeString());
             System.out.println("gdt2: " + gdt2.toNormalizedDateTimeString());
@@ -101,7 +101,7 @@ public class JGlobalDateTimeExample {
 
             // Let's compare again.
             System.out.println("Comparing again gdt1 and gdt2 (using different Zone ID)");
-            gdt1.changeDefaultZone("Pacific/Tahiti");
+            gdt1.changeZoneID("Pacific/Tahiti");
             if (gdt1.isBefore(gdt2)) {
                 System.out.println(gdt1.toNormalizedDateTimeString() + " happened before " + gdt2.toNormalizedDateTimeString());
             }
@@ -114,8 +114,8 @@ public class JGlobalDateTimeExample {
 
             // And again.
             System.out.println("Comparing gdt3 and gdt4 (both use different Zone ID)");
-            gdt3.changeDefaultZone("Australia/Sydney");
-            gdt4.changeDefaultZone("Antarctica/South_Pole");
+            gdt3.changeZoneID("Australia/Sydney");
+            gdt4.changeZoneID("Antarctica/South_Pole");
             if (gdt3.isBefore(gdt4)) {
                 System.out.println(gdt3.toNormalizedDateTimeString() + " happened before " + gdt4.toNormalizedDateTimeString());
             }
@@ -127,10 +127,10 @@ public class JGlobalDateTimeExample {
             System.out.println();
 
             // Now we generate Strings in MySQL DATETIME format.
-            gdt1.resetToDefaultZone();
-            gdt2.resetToDefaultZone();
-            gdt3.resetToDefaultZone();
-            gdt4.resetToDefaultZone();
+            gdt1.resetToDefaultReferenceZoneID();
+            gdt2.resetToDefaultReferenceZoneID();
+            gdt3.resetToDefaultReferenceZoneID();
+            gdt4.resetToDefaultReferenceZoneID();
             System.out.println("Generating MySQL DATETIME format to be used in an INSERT statement");
             System.out.println("gdt1: " + gdt1.toNormalizedMySQLDateTime());
             System.out.println("gdt2: " + gdt2.toNormalizedMySQLDateTime());
@@ -151,15 +151,15 @@ public class JGlobalDateTimeExample {
             System.out.println();
 
             // Fuzzy comparation.
-            if (gdt3.isOverSinceMoreThan(3, ChronoUnit.YEARS)) {
+            if (gdt3.happenedSinceMoreThan(3, ChronoUnit.YEARS)) {
                 System.out.println("gdt3 " + gdt3.toNormalizedDateTimeString() + " happened since more than 4 years");
             } else {
                 System.out.println("gdt3 " + gdt3.toNormalizedDateTimeString() + " happened since less than 4 years");
             }
             gdt1.resetToOriginal();
             gdt1.increase(3, ChronoUnit.DAYS);
-            if (gdt1.isComingInLessThan(7, ChronoUnit.DAYS)) {
-                System.out.println("gdt1 " + gdt1.toNormalizedDateTimeString() + " will happen in les than 7 days");
+            if (gdt1.isGoingToHappenInLessThan(7, ChronoUnit.DAYS)) {
+                System.out.println("gdt1 " + gdt1.toNormalizedDateTimeString() + " will happen in less than 7 days");
             } else {
                 System.out.println("gdt1 " + gdt1.toNormalizedDateTimeString() + " will happen in more than 7 days");
             }

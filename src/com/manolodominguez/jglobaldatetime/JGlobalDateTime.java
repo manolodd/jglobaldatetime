@@ -38,19 +38,19 @@ public class JGlobalDateTime {
      * This methods is the constructor of the class. It creates a new instance
      * of JGlobalDateTime using as input the local date and time and the default
      * system zone ID. After that, it uses the default ZoneID and precission to
-     * normalize the datetime.
+     * generate the normalized version of that datetime.
      *
      * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
-     * @throws JGlobalDateTimeException if the default zone ID is not a valid
-     * Zone ID.
+     * @throws JGlobalDateTimeException if the default reference zone ID is not
+     * a valid Zone ID.
      * @since 1.0
      */
     public JGlobalDateTime() throws JGlobalDateTimeException {
         try {
-            this.referenceZoneID = ZoneId.of(JGlobalDateTime.DEFAULT_ZONE);
-            this.referencePrecission = JGlobalDateTime.DEFAULT_PRECISSION;
-            this.originalDateTime = ZonedDateTime.now(ZoneId.systemDefault()).truncatedTo(this.referencePrecission);
-            this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+            this.currentReferenceZoneID = ZoneId.of(JGlobalDateTime.DEFAULT_REFERENCE_ZONEID);
+            this.currentReferencePrecission = JGlobalDateTime.DEFAULT_PRECISSION;
+            this.originalDateTime = ZonedDateTime.now(ZoneId.systemDefault()).truncatedTo(this.currentReferencePrecission);
+            this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
         } catch (ZoneRulesException ex) {
             throw new JGlobalDateTimeException(JGlobalDateTimeException.RM_INVALID_ZONE, JGlobalDateTimeException.RC_INVALID_ZONE);
         }
@@ -59,22 +59,23 @@ public class JGlobalDateTime {
     /**
      * This methods is the constructor of the class. It creates a new instance
      * of JGlobalDateTime using as input the one specified as an argument (in
-     * ZonedDateTime format ), that includes its own Zone ID. After that, it
-     * uses the default ZoneID and precission to normalize the datetime.
+     * ZonedDateTime format), that includes its own Zone ID. After that, it uses
+     * the default reference ZoneID and precission generate the normalized
+     * version of that datetime.
      *
      * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param originalZonedDateTime The original ZonedDateTime that needs to be
      * normalized.
-     * @throws JGlobalDateTimeException if the default zone ID is not a valid
-     * Zone ID.
+     * @throws JGlobalDateTimeException if the default reference zone ID is not
+     * a valid Zone ID.
      * @since 1.0
      */
     public JGlobalDateTime(ZonedDateTime originalZonedDateTime) throws JGlobalDateTimeException {
         try {
-            this.referenceZoneID = ZoneId.of(JGlobalDateTime.DEFAULT_ZONE);
-            this.referencePrecission = JGlobalDateTime.DEFAULT_PRECISSION;
-            this.originalDateTime = originalZonedDateTime.truncatedTo(this.referencePrecission);
-            this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+            this.currentReferenceZoneID = ZoneId.of(JGlobalDateTime.DEFAULT_REFERENCE_ZONEID);
+            this.currentReferencePrecission = JGlobalDateTime.DEFAULT_PRECISSION;
+            this.originalDateTime = originalZonedDateTime.truncatedTo(this.currentReferencePrecission);
+            this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
         } catch (ZoneRulesException ex) {
             throw new JGlobalDateTimeException(JGlobalDateTimeException.RM_INVALID_ZONE, JGlobalDateTimeException.RC_INVALID_ZONE);
         }
@@ -84,21 +85,22 @@ public class JGlobalDateTime {
      * This methods is the constructor of the class. It creates a new instance
      * of JGlobalDateTime using as input the one specified as an argument (in
      * JGlobalDateTime format), that includes its own Zone ID. After that, it
-     * uses the default ZoneID and precission to normalize the datetime.
+     * uses the default referene ZoneID and precission to generate the
+     * normalized version of that datetime.
      *
      * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param originalZonedDateTime The original JGlobaleDateTime that needs to
      * be normalized.
-     * @throws JGlobalDateTimeException if the default zone ID is not a valid
-     * Zone ID.
+     * @throws JGlobalDateTimeException if the default reference zone ID is not
+     * a valid Zone ID.
      * @since 1.0
      */
     public JGlobalDateTime(JGlobalDateTime originalZonedDateTime) throws JGlobalDateTimeException {
         try {
-            this.referenceZoneID = ZoneId.of(JGlobalDateTime.DEFAULT_ZONE);
-            this.referencePrecission = JGlobalDateTime.DEFAULT_PRECISSION;
-            this.originalDateTime = originalZonedDateTime.getOriginalDateTime().truncatedTo(this.referencePrecission);
-            this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+            this.currentReferenceZoneID = ZoneId.of(JGlobalDateTime.DEFAULT_REFERENCE_ZONEID);
+            this.currentReferencePrecission = JGlobalDateTime.DEFAULT_PRECISSION;
+            this.originalDateTime = originalZonedDateTime.getOriginalDateTime().truncatedTo(this.currentReferencePrecission);
+            this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
         } catch (ZoneRulesException ex) {
             throw new JGlobalDateTimeException(JGlobalDateTimeException.RM_INVALID_ZONE, JGlobalDateTimeException.RC_INVALID_ZONE);
         }
@@ -108,8 +110,9 @@ public class JGlobalDateTime {
      * This methods is the constructor of the class. It creates a new instance
      * of JGlobalDateTime using as input the one specified as an argument (in
      * Java String format), that includes its own Zone ID. After that, it uses
-     * the default ZoneID and precission to normalize the datetime. Examples of
-     * ZonedDateTime String representation in Java are:
+     * the default reference ZoneID and precission to generate the normalized
+     * version of that datetime. Examples of ZonedDateTime String representation
+     * in Java are:
      *
      * 2015-04-06T14:20:18.811-05:00[America/Chicago]
      * 2017-04-06T21:20:18.811+02:00[Europe/Madrid]
@@ -118,17 +121,17 @@ public class JGlobalDateTime {
      * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param originalZonedDateTime The String representing the original
      * ZonedDateTime that needs to be normalized.
-     * @throws JGlobalDateTimeException if the default zone ID is not a valid
-     * Zone ID and also if the specified string is not a valid ZonedDateTime
-     * string representation.
+     * @throws JGlobalDateTimeException if the default reference zone ID is not
+     * a valid Zone ID and also if the specified string is not a valid
+     * ZonedDateTime string representation.
      * @since 1.0
      */
     public JGlobalDateTime(String originalZonedDateTime) throws JGlobalDateTimeException {
         try {
-            this.referenceZoneID = ZoneId.of(JGlobalDateTime.DEFAULT_ZONE);
-            this.referencePrecission = JGlobalDateTime.DEFAULT_PRECISSION;
-            this.originalDateTime = ZonedDateTime.parse(originalZonedDateTime).truncatedTo(this.referencePrecission);
-            this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+            this.currentReferenceZoneID = ZoneId.of(JGlobalDateTime.DEFAULT_REFERENCE_ZONEID);
+            this.currentReferencePrecission = JGlobalDateTime.DEFAULT_PRECISSION;
+            this.originalDateTime = ZonedDateTime.parse(originalZonedDateTime).truncatedTo(this.currentReferencePrecission);
+            this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
         } catch (ZoneRulesException ex) {
             throw new JGlobalDateTimeException(JGlobalDateTimeException.RM_INVALID_ZONE, JGlobalDateTimeException.RC_INVALID_ZONE);
         } catch (DateTimeParseException ex) {
@@ -139,23 +142,23 @@ public class JGlobalDateTime {
     /**
      * This methods is the constructor of the class. It creates a new instance
      * of JGlobalDateTime using as input the one specified as an argument (in
-     * long format, as millisecond from Epoch) and the default Zone ID. After
-     * that, it uses the default ZoneID and precission to normalize the
-     * datetime.
+     * long format, as millisecond from Epoch). After that, it uses the default
+     * reference ZoneID and precission to generate the normalized version of
+     * that datetime.
      *
      * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param originalDateTimeMillis The original instant, as number of
      * millisecond since Epoch withouth Zone ID, that needs to be normalized.
-     * @throws JGlobalDateTimeException if the default zone ID is not a valid
-     * Zone ID.
+     * @throws JGlobalDateTimeException if the default reference zone ID is not
+     * a valid Zone ID.
      * @since 1.0
      */
     public JGlobalDateTime(long originalDateTimeMillis) throws JGlobalDateTimeException {
         try {
-            this.referenceZoneID = ZoneId.of(JGlobalDateTime.DEFAULT_ZONE);
-            this.referencePrecission = JGlobalDateTime.DEFAULT_PRECISSION;
-            this.originalDateTime = ZonedDateTime.ofInstant(Instant.ofEpochMilli(originalDateTimeMillis), this.referenceZoneID).truncatedTo(this.referencePrecission);
-            this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+            this.currentReferenceZoneID = ZoneId.of(JGlobalDateTime.DEFAULT_REFERENCE_ZONEID);
+            this.currentReferencePrecission = JGlobalDateTime.DEFAULT_PRECISSION;
+            this.originalDateTime = ZonedDateTime.ofInstant(Instant.ofEpochMilli(originalDateTimeMillis), this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
+            this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
         } catch (ZoneRulesException ex) {
             throw new JGlobalDateTimeException(JGlobalDateTimeException.RM_INVALID_ZONE, JGlobalDateTimeException.RC_INVALID_ZONE);
         }
@@ -164,22 +167,22 @@ public class JGlobalDateTime {
     /**
      * This methods is the constructor of the class. It creates a new instance
      * of JGlobalDateTime using as input the one specified as an argument (in
-     * Timestamp format) and the default Zone ID. After that, it uses the
-     * default ZoneID and precission to normalize the datetime.
+     * Timestamp format). After that, it uses the default reference ZoneID and
+     * precission to generate the normalized version of that datetime.
      *
      * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param originalDateTime The original instant, as a Timestamp withouth
      * Zone ID, that needs to be normalized.
-     * @throws JGlobalDateTimeException if the default zone ID is not a valid
-     * Zone ID.
+     * @throws JGlobalDateTimeException if the default reference zone ID is not
+     * a valid Zone ID.
      * @since 1.0
      */
     public JGlobalDateTime(Timestamp originalDateTime) throws JGlobalDateTimeException {
         try {
-            this.referenceZoneID = ZoneId.of(JGlobalDateTime.DEFAULT_ZONE);
-            this.referencePrecission = JGlobalDateTime.DEFAULT_PRECISSION;
-            this.originalDateTime = ZonedDateTime.ofInstant(Instant.ofEpochMilli(originalDateTime.toInstant().toEpochMilli()), this.referenceZoneID).truncatedTo(this.referencePrecission);
-            this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+            this.currentReferenceZoneID = ZoneId.of(JGlobalDateTime.DEFAULT_REFERENCE_ZONEID);
+            this.currentReferencePrecission = JGlobalDateTime.DEFAULT_PRECISSION;
+            this.originalDateTime = ZonedDateTime.ofInstant(Instant.ofEpochMilli(originalDateTime.toInstant().toEpochMilli()), this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
+            this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
         } catch (ZoneRulesException ex) {
             throw new JGlobalDateTimeException(JGlobalDateTimeException.RM_INVALID_ZONE, JGlobalDateTimeException.RC_INVALID_ZONE);
         }
@@ -187,18 +190,24 @@ public class JGlobalDateTime {
 
     /**
      * This methods gets the normalized date and time, in ZonedDateTime format.
+     * A normalized datetime is a datetime that has been referenced to the
+     * current default reference ZoneID.
      *
      * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @return the normalized date and time.
      * @since 1.0
      */
     public ZonedDateTime getNormalizedDateTime() {
-        return this.normalizedDateTime.withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+        return this.normalizedDateTime.withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
     }
 
     /**
      * This methods gets the not-normalized date and time used to create this
-     * JGlobalDateTime, in ZonedDateTime format.
+     * JGlobalDateTime, in ZonedDateTime format. Let's say, it returns the
+     * original datetime that was used to create the JGlobalDateTime instance.
+     * In those cases when the value used to create the instance has not
+     * information relate to the ZoneID, the default reference ZoneID is used.
+     * Otherwise, the original ZoneID is used instead.
      *
      * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @return the not-normalized date and time used to create this
@@ -206,23 +215,26 @@ public class JGlobalDateTime {
      * @since 1.0
      */
     public ZonedDateTime getOriginalDateTime() {
-        return this.originalDateTime.withZoneSameInstant(this.originalDateTime.getZone()).truncatedTo(this.referencePrecission);
+        return this.originalDateTime.withZoneSameInstant(this.originalDateTime.getZone()).truncatedTo(this.currentReferencePrecission);
     }
 
     /**
      * This methods set the JGlobalDateTime to its initial values, removing any
-     * "minus" or "plus" operation that could be happened.
+     * "minus" or "plus", "increase", "decrease" operation that could have
+     * happened.
      *
      * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @since 1.0
      */
     public void resetToOriginal() {
-        this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+        this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
     }
 
     /**
-     * This methods gets the normalized date and time, in Java String format.
-     * Examples of ZonedDateTime String representation in Java are:
+     * This methods gets the normalized date and time, in Java String format. A
+     * normalized datetime is a datetime that has been referenced to the current
+     * default reference ZoneID. Examples of ZonedDateTime String representation
+     * in Java are:
      *
      * 2015-04-06T14:20:18.811-05:00[America/Chicago]
      * 2017-04-06T21:20:18.811+02:00[Europe/Madrid]
@@ -251,15 +263,16 @@ public class JGlobalDateTime {
     }
 
     /**
-     * This methods gets a clone of this JGlobalDateTime object.
+     * This methods gets a clone of this JGlobalDateTime object with its current
+     * status ("minus", "plus", "increase", "decrease" operations included).
      *
      * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @return a clone of this JGlobalDateTime object.
      * @since 1.0
      */
-    public JGlobalDateTime getACopy() {
+    public JGlobalDateTime getACopyWithCurrentStatus() {
         try {
-            return new JGlobalDateTime(this.normalizedDateTime.truncatedTo(this.referencePrecission));
+            return new JGlobalDateTime(this.normalizedDateTime.truncatedTo(this.currentReferencePrecission));
         } catch (JGlobalDateTimeException ex) {
             logger.warn("Cannot get a copy of a valid JGlobalDateTime. So extrange!!");
             return null;
@@ -284,8 +297,8 @@ public class JGlobalDateTime {
         String hour = this.normalizedDateTime.getHour() + "";
         String minute = this.normalizedDateTime.getMinute() + "";
         String second = this.normalizedDateTime.getSecond() + "";
-        String microsecond = ((int) (this.normalizedDateTime.getNano() / 1000)) + "";
-        return year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second + "." + microsecond;
+        String nanosecond = this.normalizedDateTime.getNano() + "";
+        return year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second + "." + nanosecond;
     }
 
     /**
@@ -299,7 +312,7 @@ public class JGlobalDateTime {
      * @since 1.0
      */
     public void increase(long amount, ChronoUnit unit) {
-        this.normalizedDateTime = this.normalizedDateTime.plus(amount, unit).truncatedTo(this.referencePrecission);
+        this.normalizedDateTime = this.normalizedDateTime.plus(amount, unit).truncatedTo(this.currentReferencePrecission);
     }
 
     /**
@@ -313,7 +326,7 @@ public class JGlobalDateTime {
      * @since 1.0
      */
     public void decrease(long amount, ChronoUnit unit) {
-        this.normalizedDateTime = this.normalizedDateTime.minus(amount, unit).truncatedTo(this.referencePrecission);
+        this.normalizedDateTime = this.normalizedDateTime.minus(amount, unit).truncatedTo(this.currentReferencePrecission);
     }
 
     /**
@@ -324,8 +337,8 @@ public class JGlobalDateTime {
      * @return true, if this JGlobalDateTime is over. Otherwise, false.
      * @since 1.0
      */
-    public boolean isOver() {
-        ZonedDateTime current = ZonedDateTime.now(this.referenceZoneID).truncatedTo(this.referencePrecission);
+    public boolean alreadyHappened() {
+        ZonedDateTime current = ZonedDateTime.now(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
         return this.normalizedDateTime.toInstant().toEpochMilli() < current.toInstant().toEpochMilli();
     }
 
@@ -341,9 +354,9 @@ public class JGlobalDateTime {
      * of time. Otherwise, false.
      * @since 1.0
      */
-    public boolean isOverSinceMoreThan(long amount, ChronoUnit unit) {
-        ZonedDateTime current = ZonedDateTime.now(this.referenceZoneID).minus(amount, unit).truncatedTo(this.referencePrecission);
-        return this.normalizedDateTime.toInstant().toEpochMilli() < current.toInstant().toEpochMilli();
+    public boolean happenedSinceMoreThan(long amount, ChronoUnit unit) {
+        ZonedDateTime nowMinusAmountUnit = ZonedDateTime.now(this.currentReferenceZoneID).minus(amount, unit).truncatedTo(this.currentReferencePrecission);
+        return this.normalizedDateTime.toInstant().toEpochMilli() < nowMinusAmountUnit.toInstant().toEpochMilli();
     }
 
     /**
@@ -357,9 +370,13 @@ public class JGlobalDateTime {
      * time. Otherwise, false.
      * @since 1.0
      */
-    public boolean isComingInLessThan(long amount, ChronoUnit unit) {
-        ZonedDateTime current = ZonedDateTime.now(this.referenceZoneID).plus(amount, unit).truncatedTo(this.referencePrecission);
-        return this.normalizedDateTime.toInstant().toEpochMilli() < current.toInstant().toEpochMilli();
+    public boolean isGoingToHappenInLessThan(long amount, ChronoUnit unit) {
+        ZonedDateTime nowPlusAmountUnit = ZonedDateTime.now(this.currentReferenceZoneID).plus(amount, unit).truncatedTo(this.currentReferencePrecission);
+        ZonedDateTime now = ZonedDateTime.now(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
+        if (this.normalizedDateTime.toInstant().toEpochMilli() > now.toInstant().toEpochMilli()) {
+            return this.normalizedDateTime.toInstant().toEpochMilli() < nowPlusAmountUnit.toInstant().toEpochMilli();
+        }
+        return false;
     }
 
     /**
@@ -402,7 +419,7 @@ public class JGlobalDateTime {
      * @since 1.0
      */
     public boolean isEqualTo(ZonedDateTime anotherZonedDateTime) {
-        ZonedDateTime zdtAux = anotherZonedDateTime.withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+        ZonedDateTime zdtAux = anotherZonedDateTime.withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
         return this.isEqualTo(zdtAux.toInstant().toEpochMilli());
     }
 
@@ -440,7 +457,7 @@ public class JGlobalDateTime {
      */
     public boolean isEqualTo(String anotherZonedDateTime) throws JGlobalDateTimeException {
         try {
-            ZonedDateTime zdtAux = ZonedDateTime.parse(anotherZonedDateTime).withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+            ZonedDateTime zdtAux = ZonedDateTime.parse(anotherZonedDateTime).withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
             return this.isEqualTo(zdtAux.toInstant().toEpochMilli());
         } catch (DateTimeParseException ex) {
             throw new JGlobalDateTimeException(JGlobalDateTimeException.RM_INVALID_ZONEDDATETIME_STRING, JGlobalDateTimeException.RC_INVALID_ZONEDDATETIME_STRING);
@@ -487,7 +504,7 @@ public class JGlobalDateTime {
      * @since 1.0
      */
     public boolean isBefore(ZonedDateTime anotherZonedDateTime) {
-        ZonedDateTime zdtAux = anotherZonedDateTime.withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+        ZonedDateTime zdtAux = anotherZonedDateTime.withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
         return this.isBefore(zdtAux.toInstant().toEpochMilli());
     }
 
@@ -525,7 +542,7 @@ public class JGlobalDateTime {
      */
     public boolean isBefore(String anotherZonedDateTime) throws JGlobalDateTimeException {
         try {
-            ZonedDateTime zdtAux = ZonedDateTime.parse(anotherZonedDateTime).withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+            ZonedDateTime zdtAux = ZonedDateTime.parse(anotherZonedDateTime).withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
             return this.isBefore(zdtAux.toInstant().toEpochMilli());
         } catch (DateTimeParseException ex) {
             throw new JGlobalDateTimeException(JGlobalDateTimeException.RM_INVALID_ZONEDDATETIME_STRING, JGlobalDateTimeException.RC_INVALID_ZONEDDATETIME_STRING);
@@ -572,7 +589,7 @@ public class JGlobalDateTime {
      * @since 1.0
      */
     public boolean isAfter(ZonedDateTime anotherZonedDateTime) {
-        ZonedDateTime zdtAux = anotherZonedDateTime.withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+        ZonedDateTime zdtAux = anotherZonedDateTime.withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
         return this.isAfter(zdtAux.toInstant().toEpochMilli());
     }
 
@@ -610,7 +627,7 @@ public class JGlobalDateTime {
      */
     public boolean isAfter(String anotherZonedDateTime) throws JGlobalDateTimeException {
         try {
-            ZonedDateTime zdtAux = ZonedDateTime.parse(anotherZonedDateTime).withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+            ZonedDateTime zdtAux = ZonedDateTime.parse(anotherZonedDateTime).withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
             return this.isAfter(zdtAux.toInstant().toEpochMilli());
         } catch (DateTimeParseException ex) {
             throw new JGlobalDateTimeException(JGlobalDateTimeException.RM_INVALID_ZONEDDATETIME_STRING, JGlobalDateTimeException.RC_INVALID_ZONEDDATETIME_STRING);
@@ -618,20 +635,22 @@ public class JGlobalDateTime {
     }
 
     /**
-     * This methods changes the default Zone for this JGlobalDateTime so that
-     * the same instant is represented as a date and time for the selected new
-     * Zone.
+     * This methods changes the default reference Zone ID for this
+     * JGlobalDateTime so that the same instant is represented as a date and
+     * time for the selected new reference Zone ID.
      *
      * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
-     * @param zoneId The new default Zone for this JGlobalDateTime, as a string.
-     * @throws JGlobalDateTimeException if the specified Zone is not valid one.
+     * @param zoneId The new default reference Zone ID for this JGlobalDateTime,
+     * as a string.
+     * @throws JGlobalDateTimeException if the specified default reference Zone
+     * is not valid one.
      * @since 1.0
      */
-    public void changeDefaultZone(String zoneId) throws JGlobalDateTimeException {
+    public void changeZoneID(String zoneId) throws JGlobalDateTimeException {
         try {
-            this.referenceZoneID = ZoneId.of(zoneId);
+            this.currentReferenceZoneID = ZoneId.of(zoneId);
             if (this.originalDateTime != null) {
-                this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+                this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
             }
         } catch (ZoneRulesException ex) {
             throw new JGlobalDateTimeException(JGlobalDateTimeException.RM_INVALID_ZONE, JGlobalDateTimeException.RC_INVALID_ZONE);
@@ -639,24 +658,27 @@ public class JGlobalDateTime {
     }
 
     /**
-     * This methods changes the default Zone for this JGlobalDateTime so that
-     * the same instant is represented as a date and time for the selected new
-     * Zone.
+     * This methods changes the default reference Zone ID for this
+     * JGlobalDateTime so that the same instant is represented as a date and
+     * time for the selected new reference Zone ID.
      *
      * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
-     * @param zoneId The new default Zone for this JGlobalDateTime.
+     * @param zoneId The new default reference Zone for this JGlobalDateTime.
      * @since 1.0
      */
-    public void changeDefaultZone(ZoneId zoneId) {
-        this.referenceZoneID = zoneId;
+    public void changeZoneID(ZoneId zoneId) {
+        this.currentReferenceZoneID = zoneId;
         if (this.originalDateTime != null) {
-            this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+            this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
         }
     }
 
     /**
      * This methods changes the default precission for this JGlobalDateTime. Its
-     * value will be truncated to the specified precission.
+     * value will be truncated to the specified precission. Therefore, once a
+     * lower precission is selected some data are lost and will not recovered
+     * until a higher precission is selected and the value of the instance is
+     * reset to the original one (in this specific order).
      *
      * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param precission The desired precission (seconds, minutes,
@@ -664,9 +686,8 @@ public class JGlobalDateTime {
      * @since 1.0
      */
     public void changeDefaultPrecission(ChronoUnit precission) {
-        this.referencePrecission = JGlobalDateTime.DEFAULT_PRECISSION;
-        this.originalDateTime = this.originalDateTime.truncatedTo(this.referencePrecission);
-        this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.referenceZoneID).truncatedTo(this.referencePrecission);
+        this.currentReferencePrecission = JGlobalDateTime.DEFAULT_PRECISSION;
+        this.normalizedDateTime = this.originalDateTime.withZoneSameInstant(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
     }
 
     /**
@@ -678,9 +699,9 @@ public class JGlobalDateTime {
      * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @since 1.0
      */
-    public void resetToDefaultZone() {
+    public void resetToDefaultReferenceZoneID() {
         try {
-            this.changeDefaultZone(JGlobalDateTime.DEFAULT_ZONE);
+            this.changeZoneID(JGlobalDateTime.DEFAULT_REFERENCE_ZONEID);
         } catch (JGlobalDateTimeException ex) {
             logger.warn("Cannot reset to default ZoneID. So extrange!!");
         }
@@ -700,11 +721,11 @@ public class JGlobalDateTime {
 
     private ZonedDateTime originalDateTime;
     private ZonedDateTime normalizedDateTime;
-    private ZoneId referenceZoneID;
-    private ChronoUnit referencePrecission;
+    private ZoneId currentReferenceZoneID;
+    private ChronoUnit currentReferencePrecission;
 
-    private static final String DEFAULT_ZONE = "Europe/Madrid";
-    private static final ChronoUnit DEFAULT_PRECISSION = ChronoUnit.MILLIS;
+    private static final String DEFAULT_REFERENCE_ZONEID = "Europe/Madrid";
+    private static final ChronoUnit DEFAULT_PRECISSION = ChronoUnit.NANOS;
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 }
