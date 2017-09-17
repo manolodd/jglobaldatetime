@@ -360,6 +360,27 @@ public class JGlobalDateTime {
     }
 
     /**
+     * This methods checks if this JGlobalDateTime happened since less than a
+     * given amount of time.
+     *
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
+     * @param amount The period within which we want to check if the date is
+     * over.
+     * @param unit The period unit (days, months, hours...)
+     * @return true, if this JGlobalDateTime happened since less than the
+     * specified amount of time. Otherwise, false.
+     * @since 1.0
+     */
+    public boolean happenedSinceLessThan(long amount, ChronoUnit unit) {
+        ZonedDateTime nowMinusAmountUnit = ZonedDateTime.now(this.currentReferenceZoneID).minus(amount, unit).truncatedTo(this.currentReferencePrecission);
+        ZonedDateTime now = ZonedDateTime.now(this.currentReferenceZoneID).truncatedTo(this.currentReferencePrecission);
+        if (this.normalizedDateTime.toInstant().toEpochMilli() < now.toInstant().toEpochMilli()) {
+            return this.normalizedDateTime.toInstant().toEpochMilli() < nowMinusAmountUnit.toInstant().toEpochMilli();
+        }
+        return false;
+    }
+
+    /**
      * This methods checks if this JGlobalDateTime is coming in a given amount
      * of time.
      *
