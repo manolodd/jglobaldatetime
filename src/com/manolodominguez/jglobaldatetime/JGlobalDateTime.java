@@ -381,14 +381,14 @@ public class JGlobalDateTime {
     }
 
     /**
-     * This methods checks if this JGlobalDateTime is coming in a given amount
-     * of time.
+     * This methods checks if this JGlobalDateTime is coming in less than a a
+     * given amount of time.
      *
      * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
      * @param amount The period within which we want to check if the is coming.
      * @param unit The period unit (days, months, hours...)
-     * @return true, if this JGlobalDateTime is coming in a specified amount of
-     * time. Otherwise, false.
+     * @return true, if this JGlobalDateTime is going to happen in less than a
+     * specified amount of time. Otherwise, false.
      * @since 1.0
      */
     public boolean isGoingToHappenInLessThan(long amount, ChronoUnit unit) {
@@ -398,6 +398,22 @@ public class JGlobalDateTime {
             return this.normalizedDateTime.toInstant().toEpochMilli() < nowPlusAmountUnit.toInstant().toEpochMilli();
         }
         return false;
+    }
+
+    /**
+     * This methods checks if this JGlobalDateTime is going to happen in more
+     * than a given amount of time.
+     *
+     * @author Manuel Domínguez-Dorado - ingeniero@manolodominguez.com
+     * @param amount The period within which we want to check if the is coming.
+     * @param unit The period unit (days, months, hours...)
+     * @return true, if this JGlobalDateTime is going to happen in more than a
+     * specified amount of time. Otherwise, false.
+     * @since 1.0
+     */
+    public boolean isGoingToHappenInMoreThan(long amount, ChronoUnit unit) {
+        ZonedDateTime nowPlusAmountUnit = ZonedDateTime.now(this.currentReferenceZoneID).plus(amount, unit).truncatedTo(this.currentReferencePrecission);
+        return this.normalizedDateTime.toInstant().toEpochMilli() > nowPlusAmountUnit.toInstant().toEpochMilli();
     }
 
     /**
