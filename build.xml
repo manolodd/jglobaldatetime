@@ -79,7 +79,7 @@
              minus the .jar extension. It should not have spaces.
              <property name="store.jar.name" value="MyJarName"/>
         -->
-        <property name="store.bin.jar.name" value="JGlobalDateTime-bin-v2.1"/>
+        <property name="store.bin.jar.name" value="jglobaldatetime-bin-v2.1"/>
 
 
         <!-- don't edit below this line -->
