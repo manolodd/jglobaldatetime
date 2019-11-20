@@ -1,4 +1,4 @@
-# PROJECT STATUS (Compiled using Java 9)
+# PROJECT STATUS (Java 8)
 
 - Master branch [![Build Status](https://travis-ci.org/manolodd/jglobaldatetime.svg?branch=master)](https://travis-ci.org/manolodd/jglobaldatetime)
 
