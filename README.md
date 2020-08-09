@@ -49,24 +49,24 @@ git clone https://github.com/manolodd/jglobaldatetime.git
  - Compile the code and obtain a binary jar including all you need (you will need to install Ant before):
 ```console
 cd jglobaldatetime
-ant jglobaldatetime-binary-fat-release
+mvn clean package
 ```
- - The jar file will be located in binary-fat-release/jglobaldatetime directory.
+ - The jar file will be located in target directory.
 ```console
-cd binary-fat-release/jglobaldatetime
+cd target
 ```
  - Copy the library jar file and use it in your project.
 ```console
-cp JGlobalDateTime-{YourVersion}.jar /wherever/you/want
+cp jglobaldatetime-{YourVersion}.jar /wherever/you/want
 ```
  - It is not necessary but if you want to see JGlobalDateTime in action, the library contains a Main class. You can run it!
 ```console
-java -jar JGlobalDateTime-{YourVersion}.jar
+java -jar jglobaldatetime-{YourVersion}.jar
 ```
 
 # I NEED AN EXAMPLE
 
-Don't worry. You will find one in the sourcecode tree [here](https://github.com/manolodd/jglobaldatetime/blob/master/src/com/manolodominguez/jglobaldatetime/example/JGlobalDateTimeExample.java). 
+Don't worry. You will find one in the sourcecode tree [here](https://github.com/manolodd/jglobaldatetime/blob/master/src/main/java/com/manolodominguez/jglobaldatetime/example/JGlobalDateTimeExample.java). 
 
 
 # HOW TO CONTRIBUTE
