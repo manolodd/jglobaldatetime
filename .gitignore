@@ -1,6 +1,8 @@
-/dist/
-/build/
-/binary-fat-release/
-/nbproject/private/
 /.project
-/logo-editable
+/target/
+/dependency-reduced-pom.xml
+/nbactions.xml
+/licenseheader.txt
+/nbproject/
+/nb-configuration.xml
+/documentos_de_ayuda/

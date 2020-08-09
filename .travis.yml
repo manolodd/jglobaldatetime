@@ -1,5 +1,4 @@
 language: java
-install: ant
 jdk:
   - openjdk8
   - openjdk9
@@ -8,3 +7,6 @@ jdk:
   - openjdk12
   - openjdk13
   - openjdk14
+  
+services:
+  - xvfb
