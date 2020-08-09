@@ -1,5 +1,0 @@
-GlobalDateTime license has changed during the project evolution:
-
-- GlobalDateTime 1.0 was closed source. You will not find it anywere, anymore.
-- GlobalDateTime 2.0 (this one) is released under Apache Software License 2.0
-

@@ -1,8 +1,0 @@
-GlobalDateTime uses third-party components each one of them having its own OSS 
-license. License compatibility has been taken into account to allow 
-GlobalDateTime be released under its current OSS licence. They are:
-
-- slf4j-api - MIT - https://www.slf4j.org/
-- slf4j-simple - MIT - https://www.slf4j.org/
-
-Thanks folks!

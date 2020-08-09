@@ -1,3 +1,5 @@
+package com.manolodominguez.jglobaldatetime;
+
 /* 
  * Copyright (C) Manuel Domínguez Dorado - ingeniero@ManoloDominguez.com.
  *
@@ -18,9 +20,11 @@ import java.sql.Timestamp;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 import java.time.zone.ZoneRulesException;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class implements functionalities to handle DateTime object taking into

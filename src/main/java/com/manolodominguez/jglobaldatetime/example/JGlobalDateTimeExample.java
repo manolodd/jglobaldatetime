@@ -15,6 +15,8 @@
  */
 package com.manolodominguez.jglobaldatetime.example;
 
+import com.manolodominguez.jglobaldatetime.JGlobalDateTime;
+import com.manolodominguez.jglobaldatetime.JGlobalDateTimeException;
 import java.sql.Timestamp;
 import java.time.temporal.ChronoUnit;
 import org.slf4j.Logger;
