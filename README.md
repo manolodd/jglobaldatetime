@@ -8,16 +8,17 @@
 
 <b>JGlobalDateTime</b> is a Java library that eases the comparation, transmission, conversion and storage of zoned datetime formats.
 
-![JGlobalDateTime logo](https://raw.githubusercontent.com/manolodd/jglobaldatetime/master/logo/jglobaldatetime-logo.jpg)
+![JGlobalDateTime logo](https://raw.githubusercontent.com/manolodd/jglobaldatetime/master/src/main/resources/com/manolodominguez/jglobaldatetime/logo/jglobaldatetime-logo.jpg)
 
 # LICENSE
 
 ## Current version:
  
-- <b>JGlobalDateTime 2.1:</b> Apache Software License 2.0.
+- <b>JGlobalDateTime 2.2:</b> Apache Software License 2.0.
 
 ## Previous versions:
 
+- <b>JGlobalDateTime 2.1:</b> Apache Software License 2.0.
 - <b>GlobalDateTime 2.0:</b> Apache Software License 2.0.
 - <b>JGlobalDateTime <2.0:</b> Closed source. Do not look for them.
 
@@ -56,11 +57,11 @@ cd binary-fat-release/jglobaldatetime
 ```
  - Copy the library jar file and use it in your project.
 ```console
-cp JGlobalDateTime-bin-v{YourVersion}.jar /wherever/you/want
+cp JGlobalDateTime-{YourVersion}.jar /wherever/you/want
 ```
  - It is not necessary but if you want to see JGlobalDateTime in action, the library contains a Main class. You can run it!
 ```console
-java -jar JGlobalDateTime-bin-v{YourVersion}.jar
+java -jar JGlobalDateTime-{YourVersion}.jar
 ```
 
 # I NEED AN EXAMPLE
