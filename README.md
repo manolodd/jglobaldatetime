@@ -27,7 +27,10 @@
 ## Author:
     
  - Manuel Domínguez-Dorado - <ingeniero@ManoloDominguez.com>
-  
+
+Please, refer always to the project home page at:
+
+ - http://jglobaldatetime.manolodominguez.com/  
 
 # THIRD-PARTY COMPONENTS
 
@@ -59,9 +62,13 @@ cd target
 ```console
 cp jglobaldatetime-{YourVersion}.jar /wherever/you/want
 ```
+ - Also, if you need a jar containing all dependencies you have it in the same directory.
+```console
+cp jglobaldatetime-{YourVersion}-with-dependencies.jar /wherever/you/want
+```
  - It is not necessary but if you want to see JGlobalDateTime in action, the library contains a Main class. You can run it!
 ```console
-java -jar jglobaldatetime-{YourVersion}.jar
+java -jar jglobaldatetime-{YourVersion}-with-dependencies.jar
 ```
 
 # I NEED AN EXAMPLE
