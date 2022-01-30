@@ -14,12 +14,11 @@
 
 ## Current version:
  
-- <b>JGlobalDateTime 2.2:</b> Apache Software License 2.0.
+- <b>JGlobalDateTime 2.3:</b> Apache Software License 2.0.
 
 ## Previous versions:
 
-- <b>JGlobalDateTime 2.1:</b> Apache Software License 2.0.
-- <b>GlobalDateTime 2.0:</b> Apache Software License 2.0.
+- <b>JGlobalDateTime 2.0 - 2.2:</b> Apache Software License 2.0.
 - <b>JGlobalDateTime <2.0:</b> Closed source. Do not look for them.
 
 # PEOPLE BEHIND JGLOBALDATETIME
