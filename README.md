@@ -1,8 +1,8 @@
 # PROJECT STATUS (Java 8)
 
-- Master branch [![Build Status](https://img.shields.io/travis/manolodd/jglobaldatetime/master.svg)](https://app.travis-ci.com/github/manolodd/jglobaldatetime/builds)
+- Master branch [![Build Status](https://img.shields.io/travis/com/manolodd/jglobaldatetime/master)](https://app.travis-ci.com/github/manolodd/jglobaldatetime/builds)
 
-- Development branch [![Build Status](https://img.shields.io/travis/manolodd/jglobaldatetime/development.svg)](https://app.travis-ci.com/github/manolodd/jglobaldatetime/builds)
+- Development branch [![Build Status](https://img.shields.io/travis/com/manolodd/jglobaldatetime/development)](https://app.travis-ci.com/github/manolodd/jglobaldatetime/builds)
 
 # THE PROJECT
 
